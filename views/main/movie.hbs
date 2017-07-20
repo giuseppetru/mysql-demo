@@ -1,0 +1,30 @@
+{{# each allmovies}}
+<!DOCTYPE html>
+<a class="btn btn-default" href="/movies">Back</a> 
+
+<div class="container">
+<body class="productpagecolor">
+<div class="productpagecolor">
+		<div class="productimage desktop-product">
+			<div class="col-md-8 col-sm-8">	
+				
+				<img class="productimage resize-productimage" src="https://resizing.flixster.com/GK67PC_qylaD_nMUl8KcshPZODg=/206x305/v1.bTsxMTE3MTI5OTtqOzE3NDU0OzEyMDA7ODAwOzEyMDA" >				
+			</div>
+		</div>
+		<div class="col-md-4 col-sm-4 col-xs-12">
+			<div class="fixedproduct desktop-product">
+				<h3>{{this.mname}}</h3>
+				<p>{{this.mdate}}</p>
+				<p>{{this.mdirector}}</p>
+
+				<form method="post" action="/addtobag/{{this.product._id}}">
+					<input type="hidden" name="_csrf" value="{{csrfToken}}">
+					<button type="submit" name="add-to-bag" value="add-to-bag" class="btn  btn-checkout">Blacklist This</button> 
+				</form>
+				</br>
+				<p>This is a stupid movie that is named after a drink</p>
+			</div>
+		</div>
+</div>
+</div>
+{{/ each}}
