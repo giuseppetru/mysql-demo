@@ -30,16 +30,22 @@ router.get('/add', function (req, res, next) {
 
 router.post('/add', function (req, res, next) {
 	var Movies = connection.define('movies', {
-	mid: Sequelize.TEXT,
-	mame: Sequelize.STRING,
-	mate: Sequelize.TEXT
+	mname: Sequelize.STRING,
+	mdate: Sequelize.TEXT,
+	mdirector: Sequelize.TEXT,
+	mgenre: Sequelize.TEXT,
+	mcover: Sequelize.TEXT
 	});
 
 	connection.sync().then(function() {
 		Movies.create({
-			mid: req.body.mid,
-			mame: req.body.mame,
-			mate: req.body.mate
+			mname: req.body.mname,
+			mdate: req.body.mdate,
+			mdirector: req.body.mdirector,
+			mgenre: req.body.mgenre,
+			mcover: req.body.mcover
+
+
 
 		});
 	});
